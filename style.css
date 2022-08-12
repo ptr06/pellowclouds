@@ -1,9 +1,11 @@
 * {
-    background-color: beige;
+    background-color: #F8F0E3;
 }
 
 h1 {
     font-size: 25px;
-    height: auto;
-    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
 }
