@@ -18,16 +18,16 @@ function close(){
 }
 
 function adjustLogo(){
-    if (screen.availWidth <= 800) {
-        const logo = nav.insertBefore(document.createElement('div'), nav.children[0]);
-        const h1 = logo.appendChild(document.createElement('h1'));
+    if (screen.width <= 800) {
+        const div = nav.insertBefore(document.createElement('div'), nav.children[0]);
+        const h1 = div.appendChild(document.createElement('h1'));
         h1.textContent = 'pellowclouds';
-        logo.setAttribute('class','logo');
+        div.setAttribute('class','logo');
     } else {
-        const logo = mainMenu.insertBefore(document.createElement('div'), mainMenu.children[2]);
-        const h1 = logo.appendChild(document.createElement('h1'));
+        const div = mainMenu.insertBefore(document.createElement('div'), mainMenu.children[2]);
+        const h1 = div.appendChild(document.createElement('h1'));
         h1.textContent = 'pellowclouds';
-        logo.setAttribute('class','logo');
+        div.setAttribute('class','logo');
     }
 
 }
