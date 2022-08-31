@@ -1,9 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+@font-face { font-family: Lazybones; src: url('fonts/LazybonesEF\ Regular.otf');}
+@font-face { font-family: Helvetica Neue; src: url('fonts/Helvetica\ Neue\ Medium\ Extended.ttf');}
+@font-face { font-family: Helvetica Neue Med; src: url(fonts/Helvetica\ Neue\ Medium.ttf);}
+@font-face { font-family: Helvetica Neue Thin; src: url(fonts/HelveticaNeue\ Thin.otf);}
+@font-face { font-family: Blazeface; src: url(fonts/Blazeface.ttf);}
+
+html {
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+@media (max-width:480px) {
+    html, body {
+        overflow-x: hidden
+    }
+    body {
+        position: relative;
+    }
+}
+
+.top-background-img {
+    height: 800px;
+    width: 100%;
+    background-image: url("images/main-img-cropped-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 480px) {
+    .top-background-img {
+        height: 675px;
+    }
 }
 
 nav {
@@ -13,6 +45,7 @@ nav {
 }
 
 nav .mainMenu {
+    margin-top: 5px;
     display: flex;
     list-style: none;
 }
@@ -21,12 +54,14 @@ nav .mainMenu li a {
     display: inline-block;
     padding: 15px;
     text-decoration: none;
-    color: #000;
-    font-size: 1.5rem;
+    color: #fff;
+    font-size: 2rem;
+    font-family: Lazybones;
+    transition: all .3s ease 0s;
 }
 
 nav .mainMenu li a:hover {
-    color: rgb(83, 83, 224);
+    transform: scale(1.2);
 }
 
 nav .openMenu {
@@ -37,62 +72,300 @@ nav .openMenu {
 }
 
 nav .mainMenu .closeMenu , .icons i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     display: none;
     cursor: pointer;
 }
 
-.fa-youtube:hover {color: rgb(83, 83, 224);}
-.fa-tiktok:hover {color: rgb(83, 83, 224);}
-.fa-instagram:hover {color: rgb(83, 83, 224);}
+.fa-youtube {color: #4294f7;}
+.fa-spotify {color: #b04ab8;}
+.fa-itunes-note {color: #b4d678;}
+.fa-amazon {color: #e73b39;}
 
 nav .logo {
-    margin: 6px;
-    font-size: 25px;
+    color: #fff;
+    font-size: 40px;
+    cursor: pointer;
+    font-family: Lazybones;
+    font-weight: 200;
+}
+
+@media(max-width: 1000px){
+    nav .logo {
+        font-size: 1.875rem;
+        margin-top: 12px;
+    }
+
+    @media (max-width: 480px){
+        nav {
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        nav .mainMenu {
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            z-index: 10;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            transition: top 1s ease;
+            display: none;
+        }
+    
+        nav .mainMenu .closeMenu {
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color:#000;
+        }
+    
+        nav .openMenu {
+            display: block;
+            position: relative;
+            right: 7px;
+            top: 8px;
+        }
+    
+        nav .mainMenu li a {
+            color: #000;
+            display: inline-block;
+        }
+    
+        .icons i {
+            display: inline-block;
+            padding: 12px;
+            color: #000;
+        }
+    }
+}
+
+/* New Music START */
+
+.stuck {
+    height: 600px;
+    width: 600px;
+    border-radius:12px; 
+    display:block; 
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+.music-wrapper {
+    width: 100%;
+    height: 800px;
+    padding: 35px 200px 75px 200px;
+}
+
+.music-wrapper .text-and-platforms-wrapper p {
+    color: #000;
+    font-size: 50px;
+    font-family: Helvetica Neue Med;
+    text-align: center;
+}
+
+.music-wrapper .text-and-platforms-wrapper .platform-icons {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.music-wrapper .text-and-platforms-wrapper .platform-icons .fa-brands {
+    padding: 15px;
+    transition: all .3s ease 0s;
     cursor: pointer;
 }
 
-@media(max-width: 800px){
-    nav {
-        color: #000;
-        display: flex;
-        justify-content: space-between;
-    }
-    
-    nav .mainMenu {
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 10;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: #fff;
-        transition: top 1s ease;
-        display: none;
-    }
+.music-wrapper .text-and-platforms-wrapper .platform-icons .fa-brands:hover {
+    transform: scale(1.2);
+}
 
-    nav .mainMenu .closeMenu {
-        display: block;
+@media (max-width:1080px) {
+    .stuck {
+        width: 50%;
+        height: 45%;
         position: absolute;
-        top: 20px;
-        right: 30px
+    }
+    .music-wrapper .text-and-platforms-wrapper p {
+        font-size: 45px;
+        width: 800px;
+        margin-left: -50%;
     }
 
-    nav .openMenu {
-        display: block;
+    @media (max-width: 480px) {
+        .spotify-wrapper {
+            margin-top: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .music-wrapper {
+            padding: 35px 10px 0 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .music-wrapper .text-and-platforms-wrapper p {
+            width: 100%;
+            margin-left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+        .stuck {
+            height: 325px;
+            width: 250px;
+            border-radius:12px; 
+            display:flex; 
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+    }
+}
+
+/* New Music END */
+
+.about-me-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.about-me-wrapper .text-wrapper {
+    width: 100%;
+    padding: 10%;
+    padding-top: 11%;
+    margin-left: 13%;
+}
+
+.about-me-wrapper .text-wrapper .about-title {
+    font-family: Helvetica Neue Med;
+    font-size: 50px;
+    padding-bottom: 30px;
+}
+
+.about-me-wrapper .text-wrapper .about-paragraph {
+    font-family: Helvetica Neue Thin;
+    font-size: 25px;
+}
+
+.about-me-wrapper .img-wrapper img{
+    height: 50%;
+    width: 50%;
+    border-radius: 12px;
+    margin-bottom: 110px;
+}
+
+@media(max-width: 1080px) {
+    .about-me-wrapper .text-wrapper {
+        padding-top: 8%;
+        padding-left: 13%;
+        margin-left: 2%;
+    }
+    .about-me-wrapper .img-wrapper img{
+        width: 80%;
+        margin-bottom: 200px;
+    }
+    .about-me-wrapper .text-wrapper .about-title {
+        text-align: center;
+    }
+    .about-me-wrapper .text-wrapper .about-paragraph {
+        text-align: center;
     }
 
-    nav .mainMenu li a:hover {
-        background: none;
-        color: rgb(83, 83, 224);
-        font-size: 1.6rem;
+    @media (max-width: 480px) {
+        .about-me-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .about-me-wrapper .text-wrapper {
+            width: 80%;
+            margin: 50% auto 10% auto;
+            padding: 0;
+        }
+        .about-me-wrapper .text-wrapper .about-title {
+            font-size: 40px;
+        }
+        .about-me-wrapper .text-wrapper .about-paragraph {
+            font-size: 20px;
+        }
+        .about-me-wrapper .img-wrapper img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+
+/* About Me END */
+
+.footer-wrapper {
+    width: 100%;
+}
+
+.footer-wrapper .footer-icons {
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.footer-wrapper .footer-icons .fa-brands {
+    color:#000;
+    padding: 15px;
+    transition: all .3s ease 0s;
+    cursor: pointer;
+}
+
+.footer-wrapper .footer-icons .fa-brands:hover {
+    transform: scale(1.2);
+}
+
+.back-to-top {
+    color:#000;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: Helvetica Neue Med;
+    transition: all .3s ease 0s;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-to-top:hover {
+    transform: scale(1.2);
+}
+
+video {
+    width: 100%;
+}
+
+@media (max-width: 1080px) {
+    video {
+        width: 150%;
     }
 
-    .icons i {
-        display: inline-block;
-        padding: 12px;
+    @media (max-width: 480px) {
+        video {
+            width: 200%;
+        }
+        .back-to-top {
+            margin-top: 30px;
+        }
+        
     }
 }
