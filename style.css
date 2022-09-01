@@ -149,12 +149,11 @@ nav .logo {
 /* New Music START */
 
 .stuck {
-    height: 600px;
+    height: 400px;
     width: 600px;
     border-radius:12px; 
     display:block; 
     margin: 0 auto;
-    margin-bottom: 50px;
 }
 
 .music-wrapper {
@@ -193,6 +192,9 @@ nav .logo {
         width: 50%;
         height: 45%;
         position: absolute;
+    }
+    .music-wrapper {
+        height: 700px;
     }
     .music-wrapper .text-and-platforms-wrapper p {
         font-size: 45px;
@@ -245,7 +247,7 @@ nav .logo {
 .about-me-wrapper .text-wrapper {
     width: 100%;
     padding: 10%;
-    padding-top: 11%;
+    padding-top: 0%;
     margin-left: 13%;
 }
 
@@ -363,7 +365,9 @@ video {
     video {
         width: 150%;
     }
-
+    .footer-img {
+        width: 225%;
+    }
     @media (max-width: 480px) {
         video {
             width: 200%;
@@ -371,17 +375,19 @@ video {
         .back-to-top {
             margin-top: 30px;
         }
-        
+        .footer-img {
+            width: 300%;
+        }
     }
 }
 
-@media screen and (min-width:768px) {
+@media screen and (min-width:1081px) {
     .footer-img {
         display: none;
     }
 }
 
-@media screen and (max-width:767px) {
+@media screen and (max-width:1080px) {
     video {
         display: none;
     }
