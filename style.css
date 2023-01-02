@@ -26,15 +26,22 @@ html {
 .top-background-img {
     height: 800px;
     width: 100%;
-    background-image: url("images/main-img-cropped-2.jpg");
+    background-image: url("images/what-i-want-banner.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
 
+@media (max-width: 1000px) {
+    .top-background-img {
+        background-position: 10%;
+    }
+}
+
 @media (max-width: 480px) {
     .top-background-img {
         height: 675px;
+        background-position: 85%;
     }
 }
 
@@ -77,10 +84,10 @@ nav .mainMenu .closeMenu , .icons i {
     cursor: pointer;
 }
 
-.fa-youtube {color: #4294f7;}
-.fa-spotify {color: #b04ab8;}
-.fa-itunes-note {color: #b4d678;}
-.fa-amazon {color: #e73b39;}
+.fa-youtube {color: #000;}
+.fa-spotify {color: #000;}
+.fa-itunes-note {color: #000;}
+.fa-amazon {color: #000;}
 
 nav .logo {
     color: #fff;
@@ -148,25 +155,50 @@ nav .logo {
 
 /* New Music START */
 
-.stuck {
-    height: 400px;
-    width: 600px;
+.presave {
+    height: 157.5px;
+    width: 500px;
     border-radius:12px; 
-    display:block; 
+    display: block; 
     margin: 0 auto;
+    margin-top: 25px;
+}
+
+.presave-img {
+    width: 60%;
+    height: 60%;
 }
 
 .music-wrapper {
     width: 100%;
-    height: 800px;
-    padding: 35px 200px 75px 200px;
+    height: 500px;
+    padding: 35px 200px 500px 200px;
 }
 
-.music-wrapper .text-and-platforms-wrapper p {
+.wiw {
     color: #000;
     font-size: 50px;
     font-family: Helvetica Neue Med;
     text-align: center;
+}
+
+.wiw::after {
+    content: "";
+    display: block;
+    width: 150px;
+    margin-top: 50px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.wiw-subtext {
+    color: rgb(78, 78, 78);
+    font-size: 27px;
+    font-family: Helvetica Neue Med;
+    text-align: center;
+    font-style: italic;
 }
 
 .music-wrapper .text-and-platforms-wrapper .platform-icons {
@@ -188,18 +220,24 @@ nav .logo {
 }
 
 @media (max-width:1080px) {
-    .stuck {
-        width: 50%;
-        height: 45%;
-        position: absolute;
+    .presave {
+        width: 80%;
+        height: 80%;
     }
     .music-wrapper {
-        height: 700px;
+        height: 450px;
+        padding-bottom: 75px;
     }
-    .music-wrapper .text-and-platforms-wrapper p {
+    .wiw {
         font-size: 45px;
         width: 800px;
         margin-left: -50%;
+    }
+    .wiw::after {
+        display: none;
+    }
+    .wiw-subtext {
+        margin-top: 30px;
     }
 
     @media (max-width: 480px) {
@@ -216,7 +254,7 @@ nav .logo {
             justify-content: center;
             height: 100%;
         }
-        .music-wrapper .text-and-platforms-wrapper p {
+        .wiw {
             width: 100%;
             margin-left: 0;
             display: flex;
@@ -224,14 +262,14 @@ nav .logo {
             justify-content: center;
             font-size: 40px;
         }
-        .stuck {
-            height: 325px;
-            width: 250px;
+        .presave {
+            height: 80%;
+            width: 80%;
             border-radius:12px; 
             display:flex; 
             align-items: center;
             justify-content: center;
-            margin-bottom: 50px;
+            margin-top: 35px;
         }
     }
 }
@@ -293,7 +331,7 @@ nav .logo {
         }
         .about-me-wrapper .text-wrapper {
             width: 80%;
-            margin: 50% auto 10% auto;
+            margin: 20% auto 10% auto;
             padding: 0;
         }
         .about-me-wrapper .text-wrapper .about-title {
